@@ -4,5 +4,6 @@ mkdir "C:\Windows\System32\config\systemprofile\AppData\Roaming\backrest\data\ro
 copy /y %~dp0\*.* "C:\Program Files\Backrest"
 "C:\Program Files\Backrest\nssm.exe" install BackREST "C:\Program Files\Backrest\backrest.exe"
 "C:\Program Files\Backrest\nssm.exe" set BackREST AppEnvironmentExtra BACKREST_PORT=0.0.0.0:9898
+del "C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\backrest\data\oplog.sqlite"
 sc start BackREST
 rundll32.exe url.dll,FileProtocolHandler http://localhost:9898
